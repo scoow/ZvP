@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5737728787555090636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.35776, y: 1.1465938, z: -0.008510729}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,5 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb58d722772868c428ab4d3c3f6e0833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnRate: 1
   _zombie: {fileID: 6448527200675116947, guid: 40edbbb53448d8f4aa6ec7b21b5e1957, type: 3}
