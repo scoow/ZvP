@@ -11,10 +11,10 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Tiles
+  - Zombie
+  - Plant
+  - Bullet
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 624222541
+    locked: 0
+  - name: Tiles
+    uniqueID: 1370916151
+    locked: 0
+  - name: Zombie
+    uniqueID: 757382447
+    locked: 0
+  - name: Plant
+    uniqueID: 2395041107
+    locked: 0
+  - name: Bullet
+    uniqueID: 3279283149
     locked: 0

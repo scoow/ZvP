@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7300814209735150586}
   - component: {fileID: 5891316232873102878}
   - component: {fileID: 2217320760292083672}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,11 +73,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1370916151
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -200,6 +200,10 @@ PrefabInstance:
     - target: {fileID: 5737728787555090636, guid: 83beda660524ac047b7ca32283d62bc4, type: 3}
       propertyPath: m_Name
       value: SpawnPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737728787555090636, guid: 83beda660524ac047b7ca32283d62bc4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
