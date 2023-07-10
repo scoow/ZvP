@@ -9,52 +9,76 @@ public class ZombieMove : MonoBehaviour
     Animator _animator;
     PlantHealth _plantHealth;
     ZombieHealth _zombieHealth;
-   
 
     bool _isAttacking = false;
+    bool _isDying = false;
 
-    private void Start() 
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
         _zombieHealth = GetComponent<ZombieHealth>();
-        
     }
+
+    private void OnEnable()
+    {
+        _zombieHealth.zombieDying.AddListener(ZombieDying);
+    }
+
+    private void OnDisable()
+    {
+        _zombieHealth.zombieDying.RemoveListener(ZombieDying);
+    }
+
     void Update()
     {
-/*        Vector2 position = transform.position;
-        position.x*/
-       if(!_isAttacking && !_zombieHealth.IsDiyngOrNot())
-       { transform.Translate(Vector2.left * _speed * Time.deltaTime);}
-    } 
-     private void OnTriggerEnter2D(Collider2D other) 
-    {
-       if(other.gameObject.layer == LayerMask.NameToLayer("Plant") )
-          {   _plantHealth = other.gameObject.GetComponent<PlantHealth>();
-             if(_plantHealth!=null)
-            { Debug.Log("Атака!!!!");
-            _isAttacking = true;
-            _animator.SetBool("IsAttacking",true);   
-               }  }   
-    }
-    private void OnTriggerExit2D(Collider2D other) 
-    {
-          if(other.gameObject.layer == LayerMask.NameToLayer("Plant") )
-          {   _plantHealth = other.gameObject.GetComponent<PlantHealth>();
-           
-             Debug.Log("Пошли дальше");
-            _isAttacking = false;
-            _animator.SetBool("IsAttacking",false);   
-          }   
+        if (!_isAttacking && !_isDying)
+        { 
+            transform.Translate(Vector2.left * _speed * Time.deltaTime); 
+        }
     }
 
-    private void ProcessHitPlant(PlantHealth  _health)
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Plant"))
+        {
+            _plantHealth = other.gameObject.GetComponent<PlantHealth>();
+            if (_plantHealth != null)
+            {
+                Debug.Log("Атака!!!!");
+                _isAttacking = true;
+                _animator.SetBool("IsAttacking", true);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Plant"))
+        {
+            Debug.Log("Пошли дальше");
+            _isAttacking = false;
+            _animator.SetBool("IsAttacking", false);
+        }
+    }
+
+    private void ProcessHitPlant(PlantHealth _health)
     {
         _health.ProcessHit(_damage);
-
     }
+
     public void DamagePlant()
     {
-             ProcessHitPlant(_plantHealth);
+        ProcessHitPlant(_plantHealth);
     }
-         
+
+    public void ZombieDying()
+    {
+        _isDying = true;
+    }
+
+    public void ResetState()
+    {
+        _isDying = false;
+        _isAttacking = false;
+    }
 }

@@ -1,37 +1,48 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ZombieHealth : MonoBehaviour
 {
-   [SerializeField] int _health = 100;
-   Animator _animator;
-   bool _isDiyng = false;
-    void Start()
+    [SerializeField] private int _fullHealth = 100;
+    private int _currentHealth = 0;
+
+    private Animator _animator;
+    private Collider2D _collider;
+
+    [SerializeField] public UnityEvent zombieDying;
+
+    void Awake()
     {
         _animator = GetComponent<Animator>();
+        _collider = GetComponent<Collider2D>();
     }
 
-    
-    void Update()
+    void Start()
     {
-        Debug.Log(_health);
+        _collider.enabled = true;
+        _currentHealth = _fullHealth;
+
+        if (zombieDying == null)
+            zombieDying = new UnityEvent();
     }
+
     public void ProcessHit(int damage)
     {
-        _health-= damage;
-        if(_health <= 0)
+        _currentHealth -= damage;
+        if (_currentHealth <= 0)
         {
-           _isDiyng = true;
-           _animator.SetTrigger("IsDiyng");
+            _collider.enabled = false;
+            zombieDying?.Invoke();    
+            _animator.SetTrigger("IsDiyng");
         }
     }
-    public void ZombieDestruction()
+
+    public void ResetHealth() 
     {
-         Destroy(gameObject,0.5f);
-    }
-    public bool IsDiyngOrNot()
-    {
-        return _isDiyng;
+        _currentHealth = _fullHealth;
+        _collider.enabled = true;
     }
 }
