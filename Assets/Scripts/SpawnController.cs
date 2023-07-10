@@ -56,11 +56,9 @@ public class SpawnController : MonoBehaviour
 
         var spawnerIndex = Random.Range(0, _spawners.Length);
         var spawner = _spawners[spawnerIndex];
-        zombie.transform.parent = spawner.transform;
 
-        var offset = Random.Range(0, 5);
-        var pos = spawner.transform.parent.position;
-        zombie.transform.position = new Vector3(pos.x, pos.y + offset * 0.1f, pos.z);
+        zombie.transform.parent = spawner.transform;
+        zombie.transform.position = spawner.GetSpawnPosition();
     }
 
     private IEnumerator WaitForDeadStateAnimation(ZombiePoolInteraction zombie)
