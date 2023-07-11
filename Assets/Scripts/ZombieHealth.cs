@@ -18,13 +18,13 @@ public class ZombieHealth : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _collider = GetComponent<Collider2D>();
+
+        _collider.enabled = true;
+        _currentHealth = _fullHealth;
     }
 
     void Start()
     {
-        _collider.enabled = true;
-        _currentHealth = _fullHealth;
-
         if (zombieDying == null)
             zombieDying = new UnityEvent();
     }
@@ -32,7 +32,7 @@ public class ZombieHealth : MonoBehaviour
     public void ProcessHit(int damage)
     {
         _currentHealth -= damage;
-        if (_currentHealth <= 0)
+        if (_currentHealth <= 0 && _collider.enabled)
         {
             _collider.enabled = false;
             zombieDying?.Invoke();    

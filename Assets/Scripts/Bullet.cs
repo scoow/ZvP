@@ -1,30 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Bullet : MonoBehaviour
-{   
-     [SerializeField] float _speed = 1f;
-    [SerializeField]  int  _damage = 50;
-    
-    // Start is called before the first frame update
+{
+    [SerializeField] float _speed = 1f;
+    [SerializeField] int _damage = 50;
+
+    [SerializeField] public UnityEvent bulletHitTargetEvent;
+
+    [SerializeField] private float rightBorder = 30;
+
     void Start()
     {
-        
+        if (bulletHitTargetEvent == null)
+            bulletHitTargetEvent = new UnityEvent();
     }
-    // Update is called once per frame
+
     void Update()
     {
         transform.Translate(Vector2.right * _speed * Time.deltaTime);
-    }
-     
-     private void OnTriggerEnter2D(Collider2D other) 
-     {
-        if(other.gameObject.layer == LayerMask.NameToLayer("Zombie") )
+        if (transform.position.x > rightBorder)
         {
-            var _zombieHealth = other.gameObject.GetComponent<ZombieHealth>();
-           _zombieHealth.ProcessHit(_damage);
-           Destroy(gameObject);
+            if (bulletHitTargetEvent != null)
+                bulletHitTargetEvent.Invoke();
         }
-     }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent(out ZombieHealth zombieHealth))
+        {
+            zombieHealth.ProcessHit(_damage);
+            if (bulletHitTargetEvent != null)
+                bulletHitTargetEvent.Invoke();
+        }
+    }
 }

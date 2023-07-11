@@ -39,12 +39,11 @@ public class ZombieMove : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Plant"))
+        if (other.TryGetComponent(out PlantHealth plantHealth))
         {
-            _plantHealth = other.gameObject.GetComponent<PlantHealth>();
+            _plantHealth = plantHealth;
             if (_plantHealth != null)
             {
-                Debug.Log("Атака!!!!");
                 _isAttacking = true;
                 _animator.SetBool("IsAttacking", true);
             }
@@ -55,20 +54,14 @@ public class ZombieMove : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Plant"))
         {
-            Debug.Log("Пошли дальше");
             _isAttacking = false;
             _animator.SetBool("IsAttacking", false);
         }
     }
 
-    private void ProcessHitPlant(PlantHealth _health)
-    {
-        _health.ProcessHit(_damage);
-    }
-
     public void DamagePlant()
     {
-        ProcessHitPlant(_plantHealth);
+        _plantHealth?.ProcessHit(_damage);
     }
 
     public void ZombieDying()

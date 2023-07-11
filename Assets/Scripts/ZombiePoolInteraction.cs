@@ -44,6 +44,7 @@ public class ZombiePoolInteraction : MonoBehaviour, IPoolable
 
     public void Destroy()
     {
+        _health.zombieDying.RemoveListener(ReleaseToPool);
         Destroy(this);
     }
 
@@ -51,7 +52,7 @@ public class ZombiePoolInteraction : MonoBehaviour, IPoolable
     {
         if (_poolReleaseAction == null)
         {
-            throw new NullReferenceException("Ќе установлен делегат дл€ выполнени€ возврата элемента в пул");
+            throw new NullReferenceException("Ќе установлен делегат дл€ выполнени€ возврата Zombie в пул");
         }
         _poolReleaseAction(this);
     }
