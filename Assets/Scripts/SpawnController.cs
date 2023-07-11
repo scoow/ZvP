@@ -26,7 +26,7 @@ public class SpawnController : MonoBehaviour
 
         // TODO: determine proper capacity and size
         _pool = new ObjPool<ZombiePoolInteraction>(
-            defaultCapacity: 20,
+            defaultCapacity: 10,
             maxPoolSize: 40,
             () => Instantiate(_zombie)
          );
