@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 712358353}
   - component: {fileID: 712358355}
   - component: {fileID: 712358354}
+  - component: {fileID: 712358356}
   m_Layer: 0
   m_Name: AudioController
   m_TagString: Untagged
@@ -696,6 +697,8 @@ MonoBehaviour:
   _soundAudioSource: {fileID: 712358355}
   _zombieSpawnedSound: {fileID: 0}
   _zombieDiedSound: {fileID: 0}
+  _plantSpawnedSound: {fileID: 0}
+  _plantDiedSound: {fileID: 0}
   _plantShootedSound: {fileID: 0}
 --- !u!82 &712358355
 AudioSource:
@@ -793,6 +796,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &712358356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712358352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43b8dcd843ea0904a898e88418e12b2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundEventChannelSO: {fileID: 11400000, guid: 7c7750db442ce35419346592bbd68797, type: 2}
+  _zombieSpawnedSound: {fileID: 0}
+  _zombieDiedSound: {fileID: 0}
+  _plantSpawnedSound: {fileID: 0}
+  _plantDiedSound: {fileID: 0}
+  _plantShootedSound: {fileID: 0}
 --- !u!1001 &718676594
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1420,6 +1441,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 918914209611488148, guid: cca6feef6a197b349a4ef47653b1ddec, type: 3}
   m_PrefabInstance: {fileID: 1335522290}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1344135834
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1344135837}
+  - component: {fileID: 1344135836}
+  - component: {fileID: 1344135835}
+  m_Layer: 0
+  m_Name: EventBus
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1344135835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344135834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec0bab51067f20b4c8cba194460294eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1344135836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344135834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc54e8c0a1f77f44eb76e05f36a3a1c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1344135837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344135834}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.68, y: -0.46000004, z: -0.103279755}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1401415504
 GameObject:
   m_ObjectHideFlags: 0
