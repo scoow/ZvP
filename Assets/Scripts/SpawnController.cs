@@ -12,6 +12,8 @@ public class SpawnController : MonoBehaviour
     [SerializeField] private ZombiePoolInteraction _zombie;
     [SerializeField] private Spawner[] _spawners;
 
+    private EventBus _eventBus;
+
     private float _spawnDelay;
     private float _minDelayOffset;
     private float _maxDelayOffset;
@@ -31,7 +33,10 @@ public class SpawnController : MonoBehaviour
             () => Instantiate(_zombie)
          );
     }
-
+    private void Start()
+    {
+        _eventBus = FindObjectOfType<EventBus>();
+    }
     private void Update()
     {
         if (_zombieCount == 0) { return; }
@@ -59,6 +64,8 @@ public class SpawnController : MonoBehaviour
 
         zombie.transform.parent = spawner.transform;
         zombie.transform.position = spawner.GetSpawnPosition();
+
+        _eventBus.PostNotification(GameEventType.zombieSpawned, null);
     }
 
     private IEnumerator WaitForDeadStateAnimation(ZombiePoolInteraction zombie)

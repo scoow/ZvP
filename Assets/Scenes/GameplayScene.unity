@@ -988,7 +988,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicAudioSource: {fileID: 0}
   _soundAudioSource: {fileID: 712358355}
-  _zombieSpawnedSound: {fileID: 0}
+  _zombieSpawnedSound: {fileID: 8300000, guid: a2633fd7874300b40b153489ca4e03ad, type: 3}
   _zombieDiedSound: {fileID: 0}
   _plantSpawnedSound: {fileID: 0}
   _plantDiedSound: {fileID: 0}
