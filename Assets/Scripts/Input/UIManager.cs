@@ -7,8 +7,8 @@ public class UIManager : MonoBehaviour
     private Button _simplePlantButton;
     [SerializeField]
     private Button _meleePlantButton;
-    private InputStateMachine _inputStateMachine;
-    private PlantType _selectedPlantType;
+    public InputStateMachine _inputStateMachine;//
+    public PlantType _selectedPlantType;//
     private void Awake()
     {
         _inputStateMachine = new InputStateMachine();
@@ -24,7 +24,7 @@ public class UIManager : MonoBehaviour
         //меняем состояние на "установка растения"
         _inputStateMachine.SetNewState(InputStateType.plantButtonPressed);
         _selectedPlantType = plantType;
-
+        Debug.Log(plantType.ToString());
     }
     private void OnDisable()
     {
