@@ -6,3 +6,15 @@ public enum GameEventType : byte
     plantDied,
     plantShooted
 }
+
+public enum InputStateType : byte
+{
+    defaultState,
+    plantButtonPressed
+}
+
+public enum PlantType : byte
+{
+    simplePlant,
+    meleePlant
+}
