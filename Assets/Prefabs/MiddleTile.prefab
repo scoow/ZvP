@@ -157,3 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1435e05b67279434ca7c16d2239b9a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _simplePlantPrefab: {fileID: 8401632825971879126, guid: a890e794e59f1834f89ba3d6d00fc9a9, type: 3}
+  _meleePlantPrefab: {fileID: 1794199039291942774, guid: 1dcbc3e9dcb8ecb4e9e3c8aebe7ad3f3, type: 3}
