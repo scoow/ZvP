@@ -1,21 +1,17 @@
 using UnityEngine;
 
 [RequireComponent (typeof(AudioSource))]
-public class AudioController : MonoBehaviour
+public class AudioController : MonoBehaviour, IEventListener
 {
     [SerializeField]
     private AudioSource _musicAudioSource;
     [SerializeField]
     private AudioSource _soundAudioSource;
-    [SerializeField]
-    private SoundEventChannelSO _soundEventChannelSO;
 
     [SerializeField]
     private AudioClip _zombieSpawnedSound;
     [SerializeField]
     private AudioClip _zombieDiedSound;
-    [SerializeField]
-    private AudioClip _zombieAttackSound;
     [SerializeField]
     private AudioClip _plantSpawnedSound;
     [SerializeField]
@@ -27,7 +23,7 @@ public class AudioController : MonoBehaviour
     {
         _soundAudioSource.PlayOneShot(audioClip);
     }
-    public void PlayMusic(AudioClip audioClip)
+    private void PlayMusic(AudioClip audioClip)
     {
         _musicAudioSource.PlayOneShot(audioClip);
     }
@@ -38,9 +34,6 @@ public class AudioController : MonoBehaviour
         {
             case GameEventType.zombieSpawned:
                 PlaySound(_zombieSpawnedSound);
-                break;
-            case GameEventType.zombieAttacked:
-                PlaySound(_zombieAttackSound);
                 break;
             case GameEventType.zombieDied:
                 PlaySound(_zombieDiedSound);
