@@ -930,7 +930,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _musicAudioSource: {fileID: 0}
   _soundAudioSource: {fileID: 712358355}
-  _soundEventChannelSO: {fileID: 0}
+  _zombieSpawnedSound: {fileID: 0}
+  _zombieDiedSound: {fileID: 0}
+  _zombieAttackSound: {fileID: 0}
+  _plantSpawnedSound: {fileID: 0}
+  _plantDiedSound: {fileID: 0}
+  _plantShootedSound: {fileID: 0}
 --- !u!82 &712358355
 AudioSource:
   m_ObjectHideFlags: 0
@@ -941,9 +946,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 0115b5941d589e741b71678174c1f719, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.642
   m_Pitch: 1
   Loop: 0
   Mute: 0
