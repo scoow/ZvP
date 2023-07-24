@@ -11,14 +11,18 @@ public class TileClickHandler : MonoBehaviour, IPointerClickHandler
     {
         _uiManager = FindObjectOfType<UIManager>();
     }
+    /// <summary>
+    /// Обработка нажатия на тайл
+    /// </summary>
+    /// <param name="eventData"></param>
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (_uiManager._inputStateMachine.InputState != InputStateType.plantButtonPressed) return;
+        if (_uiManager.InputStateMachine.InputState != InputStateType.plantButtonPressed) return;
 
-        _uiManager._inputStateMachine.SetNewState(InputStateType.defaultState);
-        Debug.Log($"Установлено растение {_uiManager._selectedPlantType}");
+        _uiManager.InputStateMachine.SetNewState(InputStateType.defaultState);
+        Debug.Log($"Установлено растение {_uiManager.SelectedPlantType}");
 
-        switch (_uiManager._selectedPlantType)
+        switch (_uiManager.SelectedPlantType)
         {
             case PlantType.simplePlant:
                 Instantiate( _simplePlantPrefab, transform.position, Quaternion.identity );

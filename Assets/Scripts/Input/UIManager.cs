@@ -7,12 +7,17 @@ public class UIManager : MonoBehaviour
     private Button _simplePlantButton;
     [SerializeField]
     private Button _meleePlantButton;
-    public InputStateMachine _inputStateMachine;//
-    public PlantType _selectedPlantType;//
+    private InputStateMachine _inputStateMachine;
+    public InputStateMachine InputStateMachine => _inputStateMachine;
+    private PlantType _selectedPlantType;
+    public PlantType SelectedPlantType => _selectedPlantType;
     private void Awake()
     {
         _inputStateMachine = new InputStateMachine();
     }
+    /// <summary>
+    /// Подписываем кнопки на события
+    /// </summary>
     private void OnEnable()
     {
         _simplePlantButton.onClick.AddListener(delegate { OnPlantButtonClick(PlantType.simplePlant); });
@@ -24,8 +29,10 @@ public class UIManager : MonoBehaviour
         //меняем состояние на "установка растения"
         _inputStateMachine.SetNewState(InputStateType.plantButtonPressed);
         _selectedPlantType = plantType;
-        Debug.Log(plantType.ToString());
     }
+    /// <summary>
+    /// Отписываем кнопки от событий
+    /// </summary>
     private void OnDisable()
     {
         _simplePlantButton.onClick.RemoveAllListeners();
