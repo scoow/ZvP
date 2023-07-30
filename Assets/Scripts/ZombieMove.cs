@@ -33,7 +33,7 @@ public class ZombieMove : MonoBehaviour
     {
         if (!_isAttacking && !_isDying)
         { 
-            transform.Translate(Vector2.left * _speed * Time.deltaTime); 
+            transform.Translate(_speed * Time.deltaTime * Vector2.left); 
         }
     }
 
@@ -61,7 +61,7 @@ public class ZombieMove : MonoBehaviour
 
     public void DamagePlant()
     {
-        _plantHealth?.ProcessHit(_damage);
+        _plantHealth?.ProcessHit(_damage);//? не работает с объектами Unity
     }
 
     public void ZombieDying()
