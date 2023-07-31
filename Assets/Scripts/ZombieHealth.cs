@@ -34,10 +34,15 @@ public class ZombieHealth : MonoBehaviour
         _currentHealth -= damage;
         if (_currentHealth <= 0 && _collider.enabled)
         {
-            _collider.enabled = false;
-            zombieDying?.Invoke();    
-            _animator.SetTrigger("IsDiyng");
+            Die();
         }
+    }
+
+    public void Die()
+    {
+        _collider.enabled = false;
+        zombieDying?.Invoke();
+        _animator.SetTrigger("IsDiyng");
     }
 
     public void ResetHealth() 

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 9108448260355938983}
   - component: {fileID: 3167352882136268220}
   - component: {fileID: 3808246162953609076}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: MiddleTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -157,5 +157,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1435e05b67279434ca7c16d2239b9a71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _simplePlantPrefab: {fileID: 8401632825971879126, guid: a890e794e59f1834f89ba3d6d00fc9a9, type: 3}
+  _simplePlantPrefab: {fileID: 3968477092160271369, guid: adb69bda3a2ef1e4790f8f7766ae94d7, type: 3}
   _meleePlantPrefab: {fileID: 1794199039291942774, guid: 1dcbc3e9dcb8ecb4e9e3c8aebe7ad3f3, type: 3}
