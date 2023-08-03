@@ -61,7 +61,8 @@ public class ZombieMove : MonoBehaviour
 
     public void DamagePlant()
     {
-        _plantHealth?.ProcessHit(_damage);//? не работает с объектами Unity
+        if (_plantHealth == null) return;
+        _plantHealth.ProcessHit(_damage);//? не работает с объектами Unity
     }
 
     public void ZombieDying()
