@@ -6,12 +6,12 @@ using UnityEngine.Pool;
 
 public class ObjPool<T> where T: class, IPoolable
 {
-    private Func<T> _createPoolObjectAction;
+    private Func<T> _createPoolObjectFunc;
     private IObjectPool<T> _pool;
 
-    public ObjPool(int defaultCapacity, int maxPoolSize, Func<T> createPoolObjectAction)
+    public ObjPool(int defaultCapacity, int maxPoolSize, Func<T> createPoolObjectFunc)
     {
-        _createPoolObjectAction = createPoolObjectAction;
+        _createPoolObjectFunc = createPoolObjectFunc;
 
         _pool = new ObjectPool<T>(
                         CreatePooledItem,
@@ -35,11 +35,11 @@ public class ObjPool<T> where T: class, IPoolable
 
     private T CreatePooledItem()
     {
-        if (_createPoolObjectAction == null)
+        if (_createPoolObjectFunc == null)
         {
             throw new NullReferenceException("Не установлена функция создания элемента ObjPool");
         }
-        return _createPoolObjectAction();
+        return _createPoolObjectFunc();
     }
 
     private void OnReturnedToPool(T poolObject)

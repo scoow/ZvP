@@ -3,25 +3,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Bullet))]
-public class BulletPoolInteraction : MonoBehaviour, IPoolable
+[RequireComponent(typeof(SoundEmitter))]
+public class PoolableSoundEmitter : MonoBehaviour, IPoolable
 {
+    public SoundEmitter Emitter { get; private set; }
     private Action<IPoolable> _poolReleaseAction;
-    private Bullet _bullet;
+
+    public Guid Id { get; private set; }
 
     void Awake()
     {
-        _bullet = GetComponent<Bullet>();
+        Emitter = GetComponent<SoundEmitter>();
+        Id = Guid.NewGuid();
     }
 
     private void OnEnable()
     {
-        _bullet.bulletHitTargetEvent.AddListener(OnBulletHitTarget);
+        Emitter.OnSoundFinishedPlaying += OnSoundFinishedPlaying;
     }
 
     private void OnDisable()
     {
-        _bullet.bulletHitTargetEvent.RemoveListener(OnBulletHitTarget);
+        Emitter.OnSoundFinishedPlaying -= OnSoundFinishedPlaying;
     }
 
     public void Destroy()
@@ -31,7 +34,7 @@ public class BulletPoolInteraction : MonoBehaviour, IPoolable
 
     public void ResetObjectStateToDefaults()
     {
-        // Bullet has no state
+        // SoundEmitter has state?
     }
 
     public void SetActive(bool active)
@@ -44,11 +47,11 @@ public class BulletPoolInteraction : MonoBehaviour, IPoolable
         _poolReleaseAction = action;
     }
 
-    private void OnBulletHitTarget()
+    private void OnSoundFinishedPlaying()
     {
         if (_poolReleaseAction == null)
         {
-            throw new NullReferenceException("Ќе установлен делегат дл€ выполнени€ возврата Bullet в пул");
+            throw new NullReferenceException($"Release action is not set for poolable object {this.GetType().Name}");
         }
         _poolReleaseAction(this);
     }
