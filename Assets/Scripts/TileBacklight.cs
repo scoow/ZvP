@@ -18,7 +18,7 @@ namespace ZvP.UI
         public void OnPointerEnter(PointerEventData eventData)
         {
             _tempColor = _spriteRenderer.color;
-            _spriteRenderer.color = _spriteRenderer.color;
+            _spriteRenderer.color = _backlightColor;
         }
 
         public void OnPointerExit(PointerEventData eventData)

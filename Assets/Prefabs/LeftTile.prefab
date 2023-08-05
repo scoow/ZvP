@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1129435332437374347}
   - component: {fileID: -1678805166804122980}
   - component: {fileID: 7729163218885139181}
-  m_Layer: 7
+  m_Layer: 6
   m_Name: LeftTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.16862746}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a010e6e2935361c46b9d2a384123a384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _backlightColor: {r: 0, g: 0, b: 0, a: 0}
+  _backlightColor: {r: 0, g: 0, b: 0, a: 0.19607843}
