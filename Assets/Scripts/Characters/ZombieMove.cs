@@ -9,6 +9,7 @@ public class ZombieMove : MonoBehaviour
     Animator _animator;
     PlantHealth _plantHealth;
     ZombieHealth _zombieHealth;
+    private ZombieAudio _audio;
 
     bool _isAttacking = false;
     bool _isDying = false;
@@ -17,6 +18,7 @@ public class ZombieMove : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _zombieHealth = GetComponent<ZombieHealth>();
+        _audio = GetComponent<ZombieAudio>();
     }
 
     private void OnEnable()
@@ -63,6 +65,7 @@ public class ZombieMove : MonoBehaviour
     {
         if (_plantHealth == null) return;
         _plantHealth.ProcessHit(_damage);//? не работает с объектами Unity
+        _audio.PlayAtackSound();
     }
 
     public void ZombieDying()

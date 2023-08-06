@@ -11,6 +11,7 @@ public class ZombieHealth : MonoBehaviour
 
     private Animator _animator;
     private Collider2D _collider;
+    private ZombieAudio _audio;
 
     [SerializeField] public UnityEvent zombieDying;
 
@@ -18,6 +19,7 @@ public class ZombieHealth : MonoBehaviour
     {
         _animator = GetComponent<Animator>();
         _collider = GetComponent<Collider2D>();
+        _audio = GetComponent<ZombieAudio>();
 
         _collider.enabled = true;
         _currentHealth = _fullHealth;
@@ -27,6 +29,8 @@ public class ZombieHealth : MonoBehaviour
     {
         if (zombieDying == null)
             zombieDying = new UnityEvent();
+
+        _audio.PlaySpawnedSound();
     }
 
     public void ProcessHit(int damage)
@@ -43,6 +47,7 @@ public class ZombieHealth : MonoBehaviour
         _collider.enabled = false;
         zombieDying?.Invoke();
         _animator.SetTrigger("IsDiyng");
+        _audio.PlayDeathSound();
     }
 
     public void ResetHealth() 

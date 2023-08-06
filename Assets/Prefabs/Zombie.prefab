@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 4054015043595805099}
   - component: {fileID: 1347314746347889440}
   - component: {fileID: -2460722083598417406}
+  - component: {fileID: -7252731187737147947}
   m_Layer: 7
   m_Name: Zombie
   m_TagString: Untagged
@@ -229,3 +230,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 2
+--- !u!114 &-7252731187737147947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448527200675116947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73f14a1ad7c33842a721bde2db0e2f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sfxEventChannel: {fileID: 11400000, guid: 2f6d373f77633d744bfc82a0181fa185, type: 2}
+  _audioConfig: {fileID: 11400000, guid: add273d996b211841bcda2c19e5e7274, type: 2}
+  _zombieSpawned: {fileID: 11400000, guid: aeab460312ca33343a90f4aba181a620, type: 2}
+  _zombieAtack: {fileID: 11400000, guid: 9d82c8f866de2014cb5339383765ddd7, type: 2}
+  _zombieDie: {fileID: 11400000, guid: 8019eb1f8719dc242be7080ad036cdac, type: 2}
