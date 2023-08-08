@@ -12,6 +12,7 @@ public class ZombieHealth : MonoBehaviour
     private Animator _animator;
     private Collider2D _collider;
     private ZombieAudio _audio;
+    private Lane _lane;
 
     [SerializeField] public UnityEvent zombieDying;
 
@@ -21,14 +22,16 @@ public class ZombieHealth : MonoBehaviour
         _collider = GetComponent<Collider2D>();
         _audio = GetComponent<ZombieAudio>();
 
-        _collider.enabled = true;
-        _currentHealth = _fullHealth;
+        ResetHealth();
     }
 
     void Start()
     {
         if (zombieDying == null)
             zombieDying = new UnityEvent();
+
+        _lane = GetComponentInParent<Lane>();
+        _lane?.ZombieSpawned();
 
         _audio.PlaySpawnedSound();
     }
@@ -48,6 +51,7 @@ public class ZombieHealth : MonoBehaviour
         zombieDying?.Invoke();
         _animator.SetTrigger("IsDiyng");
         _audio.PlayDeathSound();
+        _lane?.ZombieDie();
     }
 
     public void ResetHealth() 

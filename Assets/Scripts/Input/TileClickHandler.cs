@@ -4,8 +4,8 @@ using UnityEngine.EventSystems;
 public class TileClickHandler : MonoBehaviour, IPointerClickHandler
 {
     private UIManager _uiManager;
-    [SerializeField] private GameObject _simplePlantPrefab;
-    [SerializeField] private GameObject _meleePlantPrefab;
+    [SerializeField] private PlantHealth _simplePlantPrefab;
+    [SerializeField] private PlantHealth _meleePlantPrefab;
 
     private bool _active = true;
 
@@ -29,10 +29,12 @@ public class TileClickHandler : MonoBehaviour, IPointerClickHandler
         switch (_uiManager.SelectedPlantType)
         {
             case PlantType.simplePlant:
-                Instantiate( _simplePlantPrefab, transform.position, Quaternion.identity );
+                var simplePlant = Instantiate( _simplePlantPrefab, transform.position, Quaternion.identity );
+                simplePlant.transform.parent = transform;
                 break;
             case PlantType.meleePlant:
-                Instantiate(_meleePlantPrefab, transform.position, Quaternion.identity);
+                var meleePlant = Instantiate(_meleePlantPrefab, transform.position, Quaternion.identity);
+                meleePlant.transform.parent = transform;
                 break;
             default:
                 break;
