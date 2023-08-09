@@ -1,12 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
 /// Listens laneEmpty events on plants Lane and toggles IsAttacking flag for shooting animation
 /// </summary>
-public class PlantShootingWeapon : MonoBehaviour
+public class RangedWeaponActivator : MonoBehaviour
 {
     private Animator _animator;
     private Lane _lane;

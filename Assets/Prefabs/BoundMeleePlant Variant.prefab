@@ -188,6 +188,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 961290538911068491, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1237664527186152220}
+    - targetCorrespondingSourceObject: {fileID: 961290538911068491, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3203228186087977472}
   m_SourcePrefab: {fileID: -6949504562813384714, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
 --- !u!1 &4287593944970383489 stripped
 GameObject:
@@ -227,7 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6071eb5ab43d051488246fd71bd73ac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 50
+  _cooldown: 0.5
+  _range: 0.5
 --- !u!114 &6774626829336390625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,7 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5886aa7c5e2a5c74482e6fb4d73a9d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 500
+  _health: 300
 --- !u!58 &1237664527186152220
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -276,3 +280,18 @@ CircleCollider2D:
   m_Offset: {x: 0.35, y: 0.6}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!114 &3203228186087977472
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287593944970383489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861f8a638fbc7654f85239db5d6c8f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _damage: 20
+  _range: 0.5
+  _targetCountCanHitAtOnce: 1

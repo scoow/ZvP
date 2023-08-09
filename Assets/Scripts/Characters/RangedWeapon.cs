@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimplePlantSooter : MonoBehaviour
+public class RangedWeapon : MonoBehaviour
 {
     [SerializeField] Transform _weapon;
 
