@@ -240,6 +240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weapon: {fileID: 8443147517453953321}
+  _fireEventChannel: {fileID: 11400000, guid: 42d8cbb838e4f7c4c8105501531b8030, type: 2}
 --- !u!58 &4000406234103844735
 CircleCollider2D:
   m_ObjectHideFlags: 0

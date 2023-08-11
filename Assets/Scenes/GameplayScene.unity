@@ -243,6 +243,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: -5724200072418892077, guid: 6003ffa5eaabc6448a05b74af2e523e0, type: 3}
+  _fireEventChannel: {fileID: 11400000, guid: 42d8cbb838e4f7c4c8105501531b8030, type: 2}
 --- !u!4 &229075212
 Transform:
   m_ObjectHideFlags: 0

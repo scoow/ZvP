@@ -7,6 +7,8 @@ public class BulletPool : MonoBehaviour
     private ObjPool<BulletPoolInteraction> _pool;
 
     [SerializeField] private BulletPoolInteraction _bulletPrefab;
+    [Header("Listening on")]
+    [SerializeField] private Vector3EventChannelSO _fireEventChannel;
 
     private void Awake()
     {
@@ -18,7 +20,17 @@ public class BulletPool : MonoBehaviour
          );
     }
 
-    public void FireBulletFrom(Transform weapon)
+    private void OnEnable()
+    {
+        _fireEventChannel.OnEventRaised += FireBulletFrom;
+    }
+
+    private void OnDisable()
+    {
+        _fireEventChannel.OnEventRaised -= FireBulletFrom;
+    }
+
+    private void FireBulletFrom(Vector3 weaponPosition)
     {
         var bullet = _pool.Get();
         bullet.SetPoolObjectReleaseAction(
@@ -26,6 +38,6 @@ public class BulletPool : MonoBehaviour
         );
 
         bullet.transform.parent = transform;
-        bullet.transform.position = weapon.position;
+        bullet.transform.position = weaponPosition;
     }
 }
