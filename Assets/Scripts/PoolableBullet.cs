@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Bullet))]
-public class BulletPoolInteraction : MonoBehaviour, IPoolable
+public class PoolableBullet : MonoBehaviour, IPoolable
 {
     private Action<IPoolable> _poolReleaseAction;
     private Bullet _bullet;

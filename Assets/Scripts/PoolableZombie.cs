@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ZombiePoolInteraction : MonoBehaviour, IPoolable
+public class PoolableZombie : MonoBehaviour, IPoolable
 {
     private Action<IPoolable> _poolReleaseAction;
     private ZombieHealth _health;
