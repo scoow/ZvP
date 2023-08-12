@@ -1,14 +1,14 @@
 public class InputStateMachine
 {
-    private InputStateType _inputState;
-    public InputStateType InputState => _inputState;
+    public InputStateType InputState { get; private set; }
 
     public InputStateMachine()
     {
-        _inputState = InputStateType.defaultState;
+        InputState = InputStateType.defaultState;
     }
+
     public void SetNewState(InputStateType newInputStateType)
     {
-        _inputState = newInputStateType;
+        InputState = newInputStateType;
     }
 }

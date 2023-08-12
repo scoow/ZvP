@@ -1,11 +1,3 @@
-public enum GameEventType : byte
-{
-    zombieSpawned,
-    zombieDied,
-    plantSpawned,
-    plantDied,
-    plantShooted
-}
 
 public enum InputStateType : byte
 {
