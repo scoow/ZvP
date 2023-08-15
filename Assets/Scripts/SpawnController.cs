@@ -30,10 +30,6 @@ public class SpawnController : MonoBehaviour
             () => Instantiate(_zombie)
          );
     }
-    private void Start()
-    {
-        
-    }
 
     private void Update()
     {

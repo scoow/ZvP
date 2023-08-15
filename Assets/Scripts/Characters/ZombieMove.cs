@@ -23,12 +23,12 @@ public class ZombieMove : MonoBehaviour
 
     private void OnEnable()
     {
-        _zombieHealth.zombieDying.AddListener(ZombieDying);
+        _zombieHealth.dyingEvent.AddListener(ZombieDying);
     }
 
     private void OnDisable()
     {
-        _zombieHealth.zombieDying.RemoveListener(ZombieDying);
+        _zombieHealth.dyingEvent.RemoveListener(ZombieDying);
     }
 
     void Update()

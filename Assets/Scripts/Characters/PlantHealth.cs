@@ -1,30 +1,27 @@
+using System.Collections;
 using UnityEngine;
 
-public class PlantHealth : MonoBehaviour
+public class PlantHealth : Health
 {
-    [SerializeField] int _health = 100;
-    Animator _animator;
-
     private void Start()
     {
-        _animator = GetComponent<Animator>();
+        dyingEvent.AddListener(onDie);
     }
 
-    void Update()
+    private void OnDisable()
     {
-        //Debug.Log(_health);
+        dyingEvent?.RemoveListener(onDie);
     }
 
-    public void ProcessHit(int damage)
+    private void onDie()
     {
-        _health -= damage;
-        if (_health <= 0)
-        {
-            _animator.SetTrigger("IsDiyng");
-        }
+        dyingEvent.RemoveListener(onDie);
+        StartCoroutine(WaitForDeadStateAnimation());
     }
-    public void Die()
+
+    private IEnumerator WaitForDeadStateAnimation()
     {
+        yield return new WaitForSeconds(2.5f);
         Destroy(gameObject);
-    }
+    }    
 }

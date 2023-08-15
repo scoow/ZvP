@@ -18,12 +18,12 @@ public class PoolableZombie : MonoBehaviour, IPoolable
 
     private void OnEnable()
     {
-        _health.zombieDying.AddListener(ReleaseToPool);
+        _health.dyingEvent.AddListener(ReleaseToPool);
     }
 
     private void OnDisable()
     {
-        _health.zombieDying.RemoveListener(ReleaseToPool);
+        _health.dyingEvent.RemoveListener(ReleaseToPool);
     }
 
     public void SetPoolObjectReleaseAction(Action<IPoolable> action)
@@ -44,7 +44,7 @@ public class PoolableZombie : MonoBehaviour, IPoolable
 
     public void Destroy()
     {
-        _health.zombieDying.RemoveListener(ReleaseToPool);
+        _health.dyingEvent.RemoveListener(ReleaseToPool);
         Destroy(this);
     }
 
@@ -52,7 +52,7 @@ public class PoolableZombie : MonoBehaviour, IPoolable
     {
         if (_poolReleaseAction == null)
         {
-            throw new NullReferenceException("Ќе установлен делегат дл€ выполнени€ возврата Zombie в пул");
+            throw new NullReferenceException($"Release action is not set for poolable object {this.GetType().Name}");
         }
         _poolReleaseAction(this);
     }

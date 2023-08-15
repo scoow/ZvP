@@ -244,7 +244,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5886aa7c5e2a5c74482e6fb4d73a9d68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 300
+  _fullHealth: 300
+  dyingEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!58 &1237664527186152220
 CircleCollider2D:
   m_ObjectHideFlags: 0
