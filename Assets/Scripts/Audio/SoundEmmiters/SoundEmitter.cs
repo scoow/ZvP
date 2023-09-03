@@ -111,7 +111,7 @@ public class SoundEmitter : MonoBehaviour
 
 	public bool IsPlaying()
 	{
-		return _audioSource.isPlaying;
+		return _audioSource?.isPlaying ?? false;
 	}
 
 	public bool IsLooping()

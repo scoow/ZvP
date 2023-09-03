@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Bullet))]
-public class BulletPoolInteraction : MonoBehaviour, IPoolable
+public class PoolableBullet : MonoBehaviour, IPoolable
 {
     private Action<IPoolable> _poolReleaseAction;
     private Bullet _bullet;
@@ -48,7 +48,7 @@ public class BulletPoolInteraction : MonoBehaviour, IPoolable
     {
         if (_poolReleaseAction == null)
         {
-            throw new NullReferenceException("Ќе установлен делегат дл€ выполнени€ возврата Bullet в пул");
+            throw new NullReferenceException($"Release action is not set for poolable object {this.GetType().Name}");
         }
         _poolReleaseAction(this);
     }

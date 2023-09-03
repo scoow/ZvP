@@ -11,4 +11,26 @@ public class ZombieAudio : CharacterAudio
     public void PlaySpawnedSound() => PlayAudio(_zombieSpawned, _audioConfig, transform.position);
     public void PlayAtackSound() => PlayAudio(_zombieAtack, _audioConfig, transform.position);
     public void PlayDeathSound() => PlayAudio(_zombieDie, _audioConfig, transform.position);
+
+    private ZombieHealth _health;
+
+    private void Awake()
+    {
+        _health = GetComponent<ZombieHealth>();
+    }
+
+    private void OnEnable()
+    {
+        _health.dyingEvent.AddListener(PlayDeathSound);
+    }
+
+    private void OnDisable()
+    {
+        _health.dyingEvent.RemoveListener(PlayDeathSound);
+    }
+
+    private void Start()
+    {
+        PlaySpawnedSound();
+    }
 }

@@ -4,28 +4,40 @@ using UnityEngine;
 
 public class BulletPool : MonoBehaviour
 {
-    private ObjPool<BulletPoolInteraction> _pool;
+    private ObjPool<PoolableBullet> _pool;
 
-    [SerializeField] private BulletPoolInteraction _bulletPrefab;
+    [SerializeField] private PoolableBullet _bulletPrefab;
+    [Header("Listening on")]
+    [SerializeField] private Vector3EventChannelSO _fireEventChannel;
 
     private void Awake()
     {
         // TODO: determine proper capacity and size
-        _pool = new ObjPool<BulletPoolInteraction>(
+        _pool = new ObjPool<PoolableBullet>(
             defaultCapacity: 75,
             maxPoolSize: 200,
             () => Instantiate(_bulletPrefab)
          );
     }
 
-    public void FireBulletFrom(Transform weapon)
+    private void OnEnable()
+    {
+        _fireEventChannel.OnEventRaised += FireBulletFrom;
+    }
+
+    private void OnDisable()
+    {
+        _fireEventChannel.OnEventRaised -= FireBulletFrom;
+    }
+
+    private void FireBulletFrom(Vector3 weaponPosition)
     {
         var bullet = _pool.Get();
         bullet.SetPoolObjectReleaseAction(
-            bullet => _pool.ReturnToPool(bullet as BulletPoolInteraction)
+            bullet => _pool.ReturnToPool(bullet as PoolableBullet)
         );
 
         bullet.transform.parent = transform;
-        bullet.transform.position = weapon.position;
+        bullet.transform.position = weaponPosition;
     }
 }

@@ -6,15 +6,12 @@ public class RangedWeapon : MonoBehaviour
 {
     [SerializeField] Transform _weapon;
 
-    private BulletPool _bulletPool;
-
-    private void Awake()
-    {
-        _bulletPool = FindObjectOfType<BulletPool>();
-    }
+    // Same SO as in BulletPool's _fireEventChannel
+    [Header("Broadcasting on")]
+    [SerializeField] private Vector3EventChannelSO _fireEventChannel;
 
     public void Fire()
     {
-        _bulletPool.FireBulletFrom(_weapon);
+        _fireEventChannel.RaiseEvent(_weapon.position);
     }
 }

@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ZombieMove : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    [SerializeField] private float _initialSpeed;
+    private float _currentSpeed;
     [SerializeField] int _damage = 50;
-    Animator _animator;
-    PlantHealth _plantHealth;
-    ZombieHealth _zombieHealth;
+
+    private Animator _animator;
+    private PlantHealth _plantHealth;
+    private ZombieHealth _zombieHealth;
     private ZombieAudio _audio;
+    private UpgradeReceiver _upgradeReceiver;
 
     bool _isAttacking = false;
     bool _isDying = false;
@@ -19,23 +23,28 @@ public class ZombieMove : MonoBehaviour
         _animator = GetComponent<Animator>();
         _zombieHealth = GetComponent<ZombieHealth>();
         _audio = GetComponent<ZombieAudio>();
+        _upgradeReceiver = GetComponent<UpgradeReceiver>();
+
+        ResetState();
     }
 
     private void OnEnable()
     {
-        _zombieHealth.zombieDying.AddListener(ZombieDying);
+        _zombieHealth.dyingEvent.AddListener(ZombieDying);
+        _upgradeReceiver.upgradeAppliedEvent.AddListener(OnUpgradeApplied);
     }
 
     private void OnDisable()
     {
-        _zombieHealth.zombieDying.RemoveListener(ZombieDying);
+        _zombieHealth.dyingEvent.RemoveListener(ZombieDying);
+        _upgradeReceiver.upgradeAppliedEvent.RemoveListener(OnUpgradeApplied);
     }
 
     void Update()
     {
         if (!_isAttacking && !_isDying)
-        { 
-            transform.Translate(_speed * Time.deltaTime * Vector2.left); 
+        {
+            transform.Translate(_currentSpeed * Time.deltaTime * Vector2.left);
         }
     }
 
@@ -61,10 +70,11 @@ public class ZombieMove : MonoBehaviour
         }
     }
 
+    // TODO: Remove attack functionality from that component
     public void DamagePlant()
     {
         if (_plantHealth == null) return;
-        _plantHealth.ProcessHit(_damage);//? не работает с объектами Unity
+        _plantHealth.ProcessHit(_damage);
         _audio.PlayAtackSound();
     }
 
@@ -73,9 +83,18 @@ public class ZombieMove : MonoBehaviour
         _isDying = true;
     }
 
+    private void OnUpgradeApplied(IEnumerable<UpgradeableAttribute> modifiedAttributes)
+    {
+        if (modifiedAttributes.Contains(UpgradeableAttribute.MovementSpeed))
+        {
+            _currentSpeed = _upgradeReceiver.ProcessValue(UpgradeableAttribute.MovementSpeed, _initialSpeed);
+        }
+    }
+
     public void ResetState()
     {
         _isDying = false;
         _isAttacking = false;
+        _currentSpeed = _initialSpeed;
     }
 }

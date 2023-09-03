@@ -1,62 +1,41 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ZombieHealth : MonoBehaviour
+public class ZombieHealth : Health
 {
-    [SerializeField] private int _fullHealth = 100;
-    private int _currentHealth = 0;
+    private UpgradeReceiver _upgradeReceiver;
 
-    private Animator _animator;
-    private Collider2D _collider;
-    private ZombieAudio _audio;
-    private Lane _lane;
-
-    [SerializeField] public UnityEvent zombieDying;
-
-    void Awake()
+    protected override void Awake()
     {
-        _animator = GetComponent<Animator>();
-        _collider = GetComponent<Collider2D>();
-        _audio = GetComponent<ZombieAudio>();
-
-        ResetHealth();
+        base.Awake();
+        _upgradeReceiver = GetComponent<UpgradeReceiver>();
     }
 
-    void Start()
+    private void OnEnable()
     {
-        if (zombieDying == null)
-            zombieDying = new UnityEvent();
-
-        _lane = GetComponentInParent<Lane>();
-        _lane?.ZombieSpawned();
-
-        _audio.PlaySpawnedSound();
+        _upgradeReceiver.upgradeAppliedEvent.AddListener(OnUpgradeApplied);
     }
 
-    public void ProcessHit(int damage)
+    private void OnDisable()
     {
-        _currentHealth -= damage;
-        if (_currentHealth <= 0 && _collider.enabled)
+        _upgradeReceiver.upgradeAppliedEvent.RemoveListener(OnUpgradeApplied);
+    }
+
+    public override void ProcessHit(float damage)
+    {
+        var damageLeft = _upgradeReceiver.ProcessValue(UpgradeableAttribute.Armor, damage);
+        base.ProcessHit(damageLeft);
+    }
+
+    private void OnUpgradeApplied(IEnumerable<UpgradeableAttribute> modifiedAttributes)
+    {
+        if (modifiedAttributes.Contains(UpgradeableAttribute.Health))
         {
-            Die();
+            _currentHealth = _upgradeReceiver.ProcessValue(UpgradeableAttribute.Health, _currentHealth);
         }
-    }
-
-    public void Die()
-    {
-        _collider.enabled = false;
-        zombieDying?.Invoke();
-        _animator.SetTrigger("IsDiyng");
-        _audio.PlayDeathSound();
-        _lane?.ZombieDie();
-    }
-
-    public void ResetHealth() 
-    {
-        _currentHealth = _fullHealth;
-        _collider.enabled = true;
     }
 }

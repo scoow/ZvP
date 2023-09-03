@@ -4,26 +4,28 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class ZombiePoolInteraction : MonoBehaviour, IPoolable
+public class PoolableZombie : MonoBehaviour, IPoolable
 {
     private Action<IPoolable> _poolReleaseAction;
     private ZombieHealth _health;
     private ZombieMove _move;
+    private UpgradeReceiver _upgradeReceiver;
 
     void Awake()
     {
         _health = GetComponent<ZombieHealth>();
         _move = GetComponent<ZombieMove>();
+        _upgradeReceiver = GetComponent<UpgradeReceiver>();
     }
 
     private void OnEnable()
     {
-        _health.zombieDying.AddListener(ReleaseToPool);
+        _health.dyingEvent.AddListener(ReleaseToPool);
     }
 
     private void OnDisable()
     {
-        _health.zombieDying.RemoveListener(ReleaseToPool);
+        _health.dyingEvent.RemoveListener(ReleaseToPool);
     }
 
     public void SetPoolObjectReleaseAction(Action<IPoolable> action)
@@ -35,6 +37,7 @@ public class ZombiePoolInteraction : MonoBehaviour, IPoolable
     {
         _move.ResetState();
         _health.ResetHealth();
+        _upgradeReceiver.Reset();
     }
 
     public void SetActive(bool active)
@@ -44,7 +47,7 @@ public class ZombiePoolInteraction : MonoBehaviour, IPoolable
 
     public void Destroy()
     {
-        _health.zombieDying.RemoveListener(ReleaseToPool);
+        _health.dyingEvent.RemoveListener(ReleaseToPool);
         Destroy(this);
     }
 
@@ -52,7 +55,7 @@ public class ZombiePoolInteraction : MonoBehaviour, IPoolable
     {
         if (_poolReleaseAction == null)
         {
-            throw new NullReferenceException("Ќе установлен делегат дл€ выполнени€ возврата Zombie в пул");
+            throw new NullReferenceException($"Release action is not set for poolable object {this.GetType().Name}");
         }
         _poolReleaseAction(this);
     }

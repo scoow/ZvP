@@ -8,14 +8,14 @@ public class SpawnController : MonoBehaviour
     // how much zombies per second
     [SerializeField] private float _spawnRate;
 
-    [SerializeField] private ZombiePoolInteraction _zombie;
+    [SerializeField] private PoolableZombie _zombie;
     [SerializeField] private Spawner[] _spawners;
 
     private float _spawnDelay;
     private float _minDelayOffset;
     private float _maxDelayOffset;
 
-    private ObjPool<ZombiePoolInteraction> _pool;
+    private ObjPool<PoolableZombie> _pool;
 
     private void Awake()
     {
@@ -24,15 +24,11 @@ public class SpawnController : MonoBehaviour
         _maxDelayOffset = _spawnDelay * 0.5f;
 
         // TODO: determine proper capacity and size
-        _pool = new ObjPool<ZombiePoolInteraction>(
+        _pool = new ObjPool<PoolableZombie>(
             defaultCapacity: 10,
             maxPoolSize: 40,
             () => Instantiate(_zombie)
          );
-    }
-    private void Start()
-    {
-        
     }
 
     private void Update()
@@ -54,7 +50,7 @@ public class SpawnController : MonoBehaviour
 
         var zombie = _pool.Get();
         zombie.SetPoolObjectReleaseAction(
-            zombie => StartCoroutine(WaitForDeadStateAnimation(zombie as ZombiePoolInteraction))
+            zombie => StartCoroutine(WaitForDeadStateAnimation(zombie as PoolableZombie))
         );
 
         var spawnerIndex = Random.Range(0, _spawners.Length);
@@ -64,7 +60,7 @@ public class SpawnController : MonoBehaviour
         zombie.transform.position = spawner.GetSpawnPosition();
     }
 
-    private IEnumerator WaitForDeadStateAnimation(ZombiePoolInteraction zombie)
+    private IEnumerator WaitForDeadStateAnimation(PoolableZombie zombie)
     {
         yield return new WaitForSeconds(2f);
         _pool.ReturnToPool(zombie);

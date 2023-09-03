@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6905833efd761a47a6ce61c861c1aed, type: 3}
+  m_Name: TestArmor
+  m_EditorClassIdentifier: 
+  AppliesTo: 2
+  _powerups:
+  - {fileID: 11400000, guid: c544592361d3c5748b891481ed92070a, type: 2}
+  - {fileID: 11400000, guid: eebc0a6e11d333449a0548de75d5434a, type: 2}

@@ -64,7 +64,7 @@ public class AudioManager : MonoBehaviour
 
 	}
 
-	private void OnDestroy()
+	private void OnDisable()
 	{
 		_SFXEventChannel.OnAudioCuePlayRequested -= PlayAudioCue;
 		_SFXEventChannel.OnAudioCueStopRequested -= StopAudioCue;
@@ -172,7 +172,7 @@ public class AudioManager : MonoBehaviour
 	{
         bool isFound = _soundEmitterVault.Get(_musicAudioKey, out PoolableSoundEmitter[] soundEmitters);
 
-        if (isFound && soundEmitters[0].Emitter.IsPlaying())
+        if (isFound && (soundEmitters[0].Emitter?.IsPlaying() ?? false))
 		{
 			soundEmitters[0].Emitter.Stop();
 			return true;
@@ -214,7 +214,7 @@ public class AudioManager : MonoBehaviour
 		{
 			for (int i = 0; i < soundEmitters.Length; i++)
 			{
-				soundEmitters[i].Emitter.Finish();
+				soundEmitters[i].Emitter?.Finish();
 			}
 		}
 		else
@@ -233,7 +233,7 @@ public class AudioManager : MonoBehaviour
 		{
 			for (int i = 0; i < soundEmitters.Length; i++)
 			{
-                soundEmitters[i].Emitter.Stop();
+                soundEmitters[i].Emitter?.Stop();
             }
 		}
 
