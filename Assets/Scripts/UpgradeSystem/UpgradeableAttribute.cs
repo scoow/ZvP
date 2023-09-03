@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Attribute
+public enum UpgradeableAttribute
 {
+    None = 0,
     Health,
-    Damage,
-    AttackValue,
+    Armor,
+    AttackDamage,
     AttackSpeed,
     MovementSpeed
 }

@@ -9,11 +9,13 @@ public class PoolableZombie : MonoBehaviour, IPoolable
     private Action<IPoolable> _poolReleaseAction;
     private ZombieHealth _health;
     private ZombieMove _move;
+    private UpgradeReceiver _upgradeReceiver;
 
     void Awake()
     {
         _health = GetComponent<ZombieHealth>();
         _move = GetComponent<ZombieMove>();
+        _upgradeReceiver = GetComponent<UpgradeReceiver>();
     }
 
     private void OnEnable()
@@ -35,6 +37,7 @@ public class PoolableZombie : MonoBehaviour, IPoolable
     {
         _move.ResetState();
         _health.ResetHealth();
+        _upgradeReceiver.Reset();
     }
 
     public void SetActive(bool active)

@@ -3,17 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Health : MonoBehaviour
+public abstract class Health : MonoBehaviour
 {
-    [SerializeField] private int _fullHealth = 100;
-    private int _currentHealth = 0;
+    [SerializeField] private float _fullHealth = 100f;
+    private protected float _currentHealth = 0f;
 
     private Animator _animator;
-    private Collider2D _collider;
+    private protected Collider2D _collider;
 
     [SerializeField] public UnityEvent dyingEvent;
 
-    void Awake()
+    protected virtual void Awake()
     {
         _animator = GetComponent<Animator>();
         _collider = GetComponent<Collider2D>();
@@ -24,10 +24,10 @@ public class Health : MonoBehaviour
         ResetHealth();
     }
 
-    public void ProcessHit(int damage)
+    public virtual void ProcessHit(float damage)
     {
         _currentHealth -= damage;
-        if (_currentHealth <= 0 && _collider.enabled)
+        if (_currentHealth <= 0f && _collider.enabled)
         {
             Die();
         }

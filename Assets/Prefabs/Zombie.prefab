@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -2460722083598417406}
   - component: {fileID: -7252731187737147947}
   - component: {fileID: 5317260001662187329}
+  - component: {fileID: -3941263810870587595}
   m_Layer: 7
   m_Name: Zombie
   m_TagString: Untagged
@@ -105,7 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1839db962d624dacc4ea2f4b76e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _initialSpeed: 1
   _damage: 20
 --- !u!70 &5823099667815668564
 CapsuleCollider2D:
@@ -231,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 2
+  _testUpgrade: {fileID: 11400000, guid: a52b9ac5bc5d5b943ba20a394fc054b1, type: 2}
 --- !u!114 &-7252731187737147947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,3 +262,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac05273351cdfe343887ad527a73d5f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-3941263810870587595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6448527200675116947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bce64a6de39e84aa311fd17afa5004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAppliedEvent:
+    m_PersistentCalls:
+      m_Calls: []
