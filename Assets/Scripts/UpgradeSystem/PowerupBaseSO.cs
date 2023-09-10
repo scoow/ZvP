@@ -11,7 +11,8 @@ public abstract class PowerupBaseSO: ScriptableObject
 {
     // property should be used to distinguish powerups that affects different attributes
     public UpgradeableAttribute Modifies = UpgradeableAttribute.None;
-
+    [SerializeField]
+    public Sprite PowerupSprite = null;
     /// <summary>
     /// Changes <paramref name="initialValue"/> to reflect effect of powerup
     /// </summary>
