@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6266862379872493141}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right forearm effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5910513849412503720}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_12 left calves
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6098712143384635018}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6326243676687514997}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4261958279016915040}
   - component: {fileID: 7356020173021014420}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right calves CCDSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,7 +203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2910945240231782276}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left foot CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 544915298505044373}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: New CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4066458086930204322}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: New CCDSolver2D (1)_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +280,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832865190015044522}
   m_LocalRotation: {x: -0, y: -0, z: -0.9977584, w: 0.066919796}
-  m_LocalPosition: {x: 6.457171, y: 10.701026, z: 0}
+  m_LocalPosition: {x: 6.0969186, y: 10.083447, z: 0}
   m_LocalScale: {x: 5.226583, y: 5.226583, z: 5.226583}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 2964188390511670211}
   - component: {fileID: 3990366810631122576}
   - component: {fileID: 4675386114888634528}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left_hand.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   m_Component:
   - component: {fileID: 556499816887645250}
   - component: {fileID: 6908650184917850449}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ' Left hand CCDSolver2D (1)'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -465,7 +465,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5689608211239100091}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -497,7 +497,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8521233830378583118}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -511,7 +511,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670992486938110876}
-  m_LocalRotation: {x: 0, y: 0, z: -0.9664497, w: 0.256856}
+  m_LocalRotation: {x: 0, y: 0, z: -0.6887035, w: 0.7250431}
   m_LocalPosition: {x: 1.8065367, y: 0.5226294, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 6708191396597998637}
   - component: {fileID: 1063838332433335066}
   - component: {fileID: 346384578280514626}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right_sholder.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 8300940085560422236}
   - component: {fileID: 1476671204040314438}
   - component: {fileID: 2726865036436838899}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Mouth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9129966217505597591}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: New CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -771,7 +771,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8576739007789348725}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_7 left hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -785,7 +785,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2010880004540462434}
-  m_LocalRotation: {x: 0, y: 0, z: 0.1632113, w: 0.9865912}
+  m_LocalRotation: {x: 0, y: 0, z: -0.60863644, w: 0.79344916}
   m_LocalPosition: {x: 1.3089724, y: -0.0000001998907, z: 0}
   m_LocalScale: {x: 1.0000002, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
@@ -805,7 +805,7 @@ GameObject:
   - component: {fileID: 73244440883182104}
   - component: {fileID: 8964146567168778872}
   - component: {fileID: 7313598831004311414}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right_feet.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +910,7 @@ GameObject:
   - component: {fileID: 8529084974453016136}
   - component: {fileID: 1171079508509692540}
   - component: {fileID: 4466381992009411138}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left_arm.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1023,7 +1023,8 @@ GameObject:
   - component: {fileID: 2038705313199209236}
   - component: {fileID: 8813658945665456907}
   - component: {fileID: 1691030120266861288}
-  m_Layer: 0
+  - component: {fileID: -7140343736468239710}
+  m_Layer: 7
   m_Name: ZombieV1anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1069,7 +1070,7 @@ Transform:
   - {fileID: 4261958279016915040}
   - {fileID: 6422607024284507466}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3527473895834822747
 Animator:
@@ -1204,6 +1205,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cooldown: 2
+  _testUpgrade: {fileID: 0}
 --- !u!114 &5087454012471133481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,7 +1247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62a1839db962d624dacc4ea2f4b76e66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1
+  _initialSpeed: 1
   _damage: 20
 --- !u!50 &1691030120266861288
 Rigidbody2D:
@@ -1274,6 +1276,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7140343736468239710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2428465474473964948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43bce64a6de39e84aa311fd17afa5004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgradeAppliedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2570975886157349577
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,7 +1300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7769308960750288278}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: head effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1314,7 +1331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 526492877120967857}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left foot CCDSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1348,7 +1365,7 @@ GameObject:
   - component: {fileID: 950550601765437037}
   - component: {fileID: 6835804674387366564}
   - component: {fileID: 7856807715193260565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left_feet.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1451,7 +1468,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5746605895893923191}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1486,7 +1503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6422607024284507466}
   - component: {fileID: 2583015488648138336}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head CCDSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1558,7 +1575,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7480514628887785408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left forearm effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1572,7 +1589,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3516048803460117555}
-  m_LocalRotation: {x: -0, y: -0, z: -0.83916533, w: 0.5438765}
+  m_LocalRotation: {x: -0, y: -0, z: -0.9811023, w: 0.19348982}
   m_LocalPosition: {x: 1.26, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1589,7 +1606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1273617707461383440}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right hand Effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1603,7 +1620,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4186110141466433613}
-  m_LocalRotation: {x: -0, y: -0, z: -0.33817366, w: 0.9410837}
+  m_LocalRotation: {x: -0, y: -0, z: -0.30125445, w: 0.95354384}
   m_LocalPosition: {x: 0.75, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1620,7 +1637,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5669877942774307204}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left foot Effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1651,7 +1668,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2657373241718706378}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1682,7 +1699,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7318417300251272647}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1716,7 +1733,7 @@ GameObject:
   - component: {fileID: 7965847302218717070}
   - component: {fileID: 3434063642776067175}
   - component: {fileID: 729679565500624807}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left_leg.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1819,7 +1836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7430053909863487257}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1850,7 +1867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1503089192294376640}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_9 right forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1883,7 +1900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5478439949556160120}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1916,7 +1933,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3121922815048491976}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_6 left forearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1930,7 +1947,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5516379112830779101}
-  m_LocalRotation: {x: 0, y: 0, z: 0.3708442, w: 0.9286951}
+  m_LocalRotation: {x: 0, y: 0, z: 0.20740378, w: 0.97825545}
   m_LocalPosition: {x: 2.2712765, y: 0.00000028203155, z: 0}
   m_LocalScale: {x: 0.99999976, y: 0.99999976, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1949,7 +1966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7015326729105056989}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right calves CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1982,7 +1999,7 @@ GameObject:
   - component: {fileID: 8043720595653983716}
   - component: {fileID: 2253380364990701252}
   - component: {fileID: 6780158872817050223}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2086,7 +2103,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3665271810804832359}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right calves effextor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2118,7 +2135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8072102325568813615}
   - component: {fileID: 3514230958970652976}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left calves CCDSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2185,7 +2202,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5173504988800223996}
   - component: {fileID: 591788178612010416}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left forearm CCDSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2200,7 +2217,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5856419101228462389}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4.14, y: 4.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2251,7 +2268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 437473820965672249}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_10 right hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2265,7 +2282,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5895853520086008814}
-  m_LocalRotation: {x: 0, y: 0, z: 0.36955276, w: 0.9292098}
+  m_LocalRotation: {x: 0, y: 0, z: 0.3330723, w: 0.9429014}
   m_LocalPosition: {x: 1.5139507, y: -0.0000010593016, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2283,7 +2300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2284308952836655096}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Head CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2314,7 +2331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2247968266448301690}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right hand  CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2329,7 +2346,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6217372934035143566}
   m_LocalRotation: {x: -0, y: -0, z: 0.08317805, w: 0.9965347}
-  m_LocalPosition: {x: 7.831336, y: 15.215497, z: 0}
+  m_LocalPosition: {x: 6.9564342, y: 13.825948, z: 0}
   m_LocalScale: {x: 5.226583, y: 5.226583, z: 5.226583}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2345,7 +2362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2312057801502442034}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2381,7 +2398,7 @@ GameObject:
   - component: {fileID: 511749953543079015}
   - component: {fileID: 1402372986475856574}
   - component: {fileID: 5040120578061116983}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left_sholder.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2486,7 +2503,7 @@ GameObject:
   - component: {fileID: 5130310964933774385}
   - component: {fileID: 896611914838913284}
   - component: {fileID: 1490751541859687015}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: neck.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2589,7 +2606,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030833712615658526}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2621,7 +2638,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1904097837546085791}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left hand effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2635,7 +2652,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7578886059017468895}
-  m_LocalRotation: {x: -0, y: -0, z: -0.9997704, w: 0.021430848}
+  m_LocalRotation: {x: -0, y: -0, z: -0.89632475, w: 0.44339824}
   m_LocalPosition: {x: 0.74, y: 0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2654,7 +2671,7 @@ GameObject:
   - component: {fileID: 2249851577510078133}
   - component: {fileID: 8847931343720742228}
   - component: {fileID: 792703088293664930}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left_leg_down.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2759,7 +2776,7 @@ GameObject:
   - component: {fileID: 1671403137758688807}
   - component: {fileID: 3192498956033934183}
   - component: {fileID: 833196925194143534}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hand.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2863,7 +2880,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8303813352369478671}
   - component: {fileID: 7150955545693595922}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right hand  CCDSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2928,7 +2945,7 @@ GameObject:
   - component: {fileID: 5723152119661758117}
   - component: {fileID: 4264408785003128656}
   - component: {fileID: 7662641507062735515}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: head3.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3031,7 +3048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2654861831405693870}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4 Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3067,7 +3084,7 @@ GameObject:
   - component: {fileID: 2220346579868340672}
   - component: {fileID: 4425231508423835206}
   - component: {fileID: 8931626380615089936}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right_leg_down.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3171,7 +3188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6681584116011919797}
   - component: {fileID: 1435881090196730461}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right forearm CCDSolver2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3239,7 +3256,7 @@ GameObject:
   - component: {fileID: 2038493301263162837}
   - component: {fileID: 6654358278020434089}
   - component: {fileID: 2502732344107455855}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right_leg.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3342,7 +3359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9091121371165039374}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3376,7 +3393,7 @@ GameObject:
   - component: {fileID: 2762709864941519112}
   - component: {fileID: 1723294719268534131}
   - component: {fileID: 3506410234812680155}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body_2.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3496,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2073180342495015818}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left calves CCDSolver2D_Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3512,7 +3529,7 @@ GameObject:
   - component: {fileID: 1658559577748233538}
   - component: {fileID: 3362975709544731863}
   - component: {fileID: 9113686721969617386}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: right_art.png
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3615,7 +3632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5233557052894926043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: left calves effector
   m_TagString: Untagged
   m_Icon: {fileID: 0}

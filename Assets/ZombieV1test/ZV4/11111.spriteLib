@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &1
+MonoBehaviour:
+  m_ObjectHideFlags: 36
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5e6fedc2472449cead18ef23b5cb30d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library:
+  - m_Name: Left Arm
+    m_Hash: -285110375
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: simple left arm
+      m_Hash: 721798561
+      m_Sprite: {fileID: 4858777431415613820, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4858777431415613820, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    - m_Name: weapon left arm
+      m_Hash: 1882461666
+      m_Sprite: {fileID: -5332496352638026315, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5332496352638026315, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Left Leg
+    m_Hash: 42955074
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: left leg
+      m_Hash: -1011591692
+      m_Sprite: {fileID: 7611407478417580104, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7611407478417580104, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    - m_Name: shoes left leg
+      m_Hash: 1360599500
+      m_Sprite: {fileID: 7796249213376554802, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7796249213376554802, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Body
+    m_Hash: 2073732236
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: simple body
+      m_Hash: 264969749
+      m_Sprite: {fileID: 152063608403051048, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 152063608403051048, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    - m_Name: helmet body
+      m_Hash: 905386304
+      m_Sprite: {fileID: 1283481488297407550, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1283481488297407550, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    - m_Name: armored body
+      m_Hash: 1444712390
+      m_Sprite: {fileID: 860611799712900343, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 860611799712900343, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    - m_Name: armored helmet body
+      m_Hash: 1384479620
+      m_Sprite: {fileID: 1397487531562112917, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1397487531562112917, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 4
+  - m_Name: Right Leg
+    m_Hash: -1056714978
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: right leg
+      m_Hash: 2076117853
+      m_Sprite: {fileID: 3560466520304918175, guid: 6a3087e40c9b1214eb3ee023c8b059d3, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 3560466520304918175, guid: 6a3087e40c9b1214eb3ee023c8b059d3, type: 3}
+    - m_Name: shoes right leg
+      m_Hash: 1395596943
+      m_Sprite: {fileID: 5163845241347261219, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 5163845241347261219, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 2
+  - m_Name: Right Arm
+    m_Hash: 747450821
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: right arm
+      m_Hash: -1775110778
+      m_Sprite: {fileID: -5403218147785202230, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5403218147785202230, guid: e872c403405f3df4b9c41c42c4997e06, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 1
+  m_PrimaryLibraryGUID: 
