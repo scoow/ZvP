@@ -7,14 +7,12 @@ public class PoolableZombie : MonoBehaviour, IPoolable
     private ZombieHealth _health;
     private ZombieMove _move;
     private UpgradeReceiver _upgradeReceiver;
-    private UnitsLayerSorter _unitsLayerSorter;
 
     void Awake()
     {
         _health = GetComponent<ZombieHealth>();
         _move = GetComponent<ZombieMove>();
         _upgradeReceiver = GetComponent<UpgradeReceiver>();
-        _unitsLayerSorter = GetComponent<UnitsLayerSorter>();
     }
 
     private void OnEnable()
@@ -37,7 +35,6 @@ public class PoolableZombie : MonoBehaviour, IPoolable
         _move.ResetState();
         _health.ResetHealth();
         _upgradeReceiver.Reset();
-        _unitsLayerSorter.ResetLayer();
     }
 
     public void SetActive(bool active)
