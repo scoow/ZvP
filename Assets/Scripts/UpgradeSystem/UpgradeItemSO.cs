@@ -13,6 +13,9 @@ public class UpgradeItemSO : ScriptableObject
 
     [SerializeField] private PowerupBaseSO[] _powerups = default;
 
+    [SerializeField]
+    public Sprite PowerupSprite = null;
+
     public IEnumerable<PowerupBaseSO> GetPowerupsFor(UpgradeableAttribute attribute)
     {
         return _powerups.Where(powerup => powerup.Modifies == attribute);
