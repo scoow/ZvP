@@ -4,5 +4,5 @@ using UnityEngine;
 
 public enum BodyPart
 {
-    Nothing, Head, Body, Arms, Legs
+    Nothing, Head, Body, Legs
 }

@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8240792060767503638, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8240792060767503638, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayerID
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1513755410893092834, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -1513755410893092834, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayerID
@@ -146,7 +146,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2695053582699673444, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2695053582699673444, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayerID
@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8423918493696027543, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayer
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8423918493696027543, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       propertyPath: m_SortingLayerID
@@ -191,6 +191,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 961290538911068491, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3203228186087977472}
+    - targetCorrespondingSourceObject: {fileID: 961290538911068491, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7560207510136617802}
   m_SourcePrefab: {fileID: -6949504562813384714, guid: 8fa7434b824c14f4199d998d9d20838d, type: 3}
 --- !u!1 &4287593944970383489 stripped
 GameObject:
@@ -298,3 +301,15 @@ MonoBehaviour:
   _damage: 20
   _range: 0.5
   _targetCountCanHitAtOnce: 1
+--- !u!210 &7560207510136617802
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4287593944970383489}
+  m_Enabled: 1
+  m_SortingLayerID: 1685955925
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_SortAtRoot: 0

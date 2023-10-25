@@ -58,7 +58,6 @@ public class SpawnController : MonoBehaviour
 
         zombie.transform.parent = spawner.transform;
         zombie.transform.position = spawner.GetSpawnPosition();
-        //TODO: use UnitsLayerSorter to change zombie's sorting layer
     }
 
     private IEnumerator WaitForDeadStateAnimation(PoolableZombie zombie)

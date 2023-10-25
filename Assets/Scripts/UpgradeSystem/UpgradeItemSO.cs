@@ -13,8 +13,14 @@ public class UpgradeItemSO : ScriptableObject
 
     [SerializeField] private PowerupBaseSO[] _powerups = default;
 
-    [SerializeField]
-    public Sprite PowerupSprite = null;
+    [System.Serializable]
+    public struct KindToAnimationEntry
+    {
+        public AnimationKind Kind;
+        public AnimationClip AnimationClip;
+    }
+
+    [SerializeField] public KindToAnimationEntry[] animations;
 
     public IEnumerable<PowerupBaseSO> GetPowerupsFor(UpgradeableAttribute attribute)
     {

@@ -47,6 +47,9 @@ TagManager:
   - name: Tiles
     uniqueID: 1370916151
     locked: 0
+  - name: ZombieAndPlantsGroup
+    uniqueID: 1685955925
+    locked: 0
   - name: Zombie
     uniqueID: 757382447
     locked: 0
