@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -11,7 +9,7 @@ public abstract class PowerupBaseSO: ScriptableObject
 {
     // property should be used to distinguish powerups that affects different attributes
     public UpgradeableAttribute Modifies = UpgradeableAttribute.None;
-
+    
     /// <summary>
     /// Changes <paramref name="initialValue"/> to reflect effect of powerup
     /// </summary>
