@@ -1,19 +1,18 @@
+using System;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class ZombieTest : MonoBehaviour, IPointerClickHandler
+public class ZombieTest : MonoBehaviour
 {
     private Collider2D _collider;
-    private UpgradeReceiver _upgradeReceiver;
 
     private float _timer;
     [SerializeField] private float _cooldown;
-    [SerializeField] private UpgradeItemSO _testUpgrade;
 
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
-        _upgradeReceiver = GetComponent<UpgradeReceiver>();
         _timer = _cooldown;
     }
 
@@ -31,21 +30,6 @@ public class ZombieTest : MonoBehaviour, IPointerClickHandler
             {
                 if (r.collider != null && r.collider.TryGetComponent<PlantHealth>(out _))
                     r.collider.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
-            }
-        }
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-        if (_upgradeReceiver != null)
-        {
-            var clone = _testUpgrade.Clone();
-            if (_upgradeReceiver.Apply(clone))
-            {
-                Debug.Log("Upgrade set "+ clone.name);
-            } else
-            {
-                Debug.Log("Upgrade NOT set");
             }
         }
     }

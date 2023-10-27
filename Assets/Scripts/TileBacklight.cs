@@ -4,26 +4,52 @@ using UnityEngine.EventSystems;
 namespace ZvP.UI
 {
     [RequireComponent(typeof(Collider2D))]
-    public class TileBacklight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class TileBacklight : MonoBehaviour
     {
         private SpriteRenderer _spriteRenderer;
-        [SerializeField]
-        private Color _backlightColor;
-        private Color _tempColor;
+        private Collider2D _collider;
+
+        [SerializeField] private Color _backlightColor;
+        private Color _originalColor;
+        private bool _colorChanged = false;
+
+        private LayerMask _tileLayer = new LayerMask();
 
         private void Awake()
         {
             _spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-        public void OnPointerEnter(PointerEventData eventData)
-        {
-            _tempColor = _spriteRenderer.color;
-            _spriteRenderer.color = _backlightColor;
+            _collider = GetComponent<Collider2D>();
         }
 
-        public void OnPointerExit(PointerEventData eventData)
+        private void Start()
         {
-            _spriteRenderer.color = _tempColor;
+            _tileLayer = LayerMask.GetMask("Tiles");
+            _originalColor = _spriteRenderer.color;
         }
+    
+        private void Update()
+        {
+            var mousePos = Input.mousePosition;
+            mousePos.z = 10;
+
+            var from = Camera.main.ScreenToWorldPoint(mousePos);
+            var tileCollider = Physics2D.OverlapPoint(from, _tileLayer);
+            if (tileCollider == _collider)
+            {
+                if (!_colorChanged)
+                {
+                    _spriteRenderer.color = _backlightColor;
+                    _colorChanged = true;
+                }
+            } 
+            else
+            {
+                if (_colorChanged)
+                {
+                    _spriteRenderer.color = _originalColor;
+                    _colorChanged = false;
+                }
+            }
+        }    
     }
 }

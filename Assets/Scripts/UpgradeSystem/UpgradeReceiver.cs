@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -16,6 +18,12 @@ public class UpgradeReceiver : MonoBehaviour
 
     private Dictionary<BodyPart, UpgradeItemSO> _upgrades;
 
+    // Animation
+    private Animator animator;
+    private AnimatorOverrideController animatorOverrideController;
+    private AnimationClipOverrides defaultAnimationClips;
+    private bool animationsOverrided = false;
+
     private void Awake()
     {
         if (upgradeAppliedEvent == null)
@@ -23,6 +31,16 @@ public class UpgradeReceiver : MonoBehaviour
 
         if (_upgrades == null)
             _upgrades = new Dictionary<BodyPart, UpgradeItemSO>() { };
+    }
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        animatorOverrideController = new AnimatorOverrideController(animator.runtimeAnimatorController);
+        animator.runtimeAnimatorController = animatorOverrideController;
+
+        defaultAnimationClips = new AnimationClipOverrides(animatorOverrideController.overridesCount);
+        animatorOverrideController.GetOverrides(defaultAnimationClips);
     }
 
     /// <summary>
@@ -34,6 +52,7 @@ public class UpgradeReceiver : MonoBehaviour
     {
         if (_upgrades.ContainsKey(upgrade.AppliesTo))
         {
+            // Body part already upgraded
             return false;
         }
 
@@ -49,10 +68,13 @@ public class UpgradeReceiver : MonoBehaviour
             {
                 // Subscribed components should recalculate UpgradeableAttributes they are interested in
                 upgradeAppliedEvent?.Invoke(upgrade.GetModifiedAttributes());
+                ResetAnimationClips();
             }
         });
 
         upgradeAppliedEvent?.Invoke(upgrade.GetModifiedAttributes());
+
+        setAnimationClips(upgrade.animations, upgrade.AppliesTo);
 
         return true;
     }
@@ -84,11 +106,55 @@ public class UpgradeReceiver : MonoBehaviour
         return result;
     }
 
+    private void setAnimationClips(UpgradeItemSO.KindToAnimationEntry[] animations, BodyPart appliesTo)
+    {
+        foreach (var item in animations)
+        {
+            defaultAnimationClips[$"{appliesTo}_{item.Kind}"] = item.AnimationClip;
+            animationsOverrided = true;
+        }
+        animatorOverrideController.ApplyOverrides(defaultAnimationClips);
+    }
+
+    private void ResetAnimationClips()
+    {
+        if (!animationsOverrided) return;
+
+        defaultAnimationClips.ResetClips();
+        animatorOverrideController.ApplyOverrides(defaultAnimationClips);
+        animationsOverrided = false;
+    }
+
     /// <summary>
     /// Should be called before releasing to object pool or after take from pool
     /// </summary>
     public void Reset()
     {
         _upgrades.Clear();
+        ResetAnimationClips();
+    }
+}
+
+public class AnimationClipOverrides : List<KeyValuePair<AnimationClip, AnimationClip>>
+{
+    public AnimationClipOverrides(int capacity) : base(capacity) { }
+
+    public AnimationClip this[string name]
+    {
+        get { return this.Find(x => x.Key.name.Equals(name)).Value; }
+        set
+        {
+            int index = this.FindIndex(x => x.Key.name.Equals(name));
+            if (index != -1)
+                this[index] = new KeyValuePair<AnimationClip, AnimationClip>(this[index].Key, value);
+        }
+    }
+
+    public void ResetClips()
+    {
+        for (int i = 0; i < this.Count; i++)
+        {
+            this[i] = new KeyValuePair<AnimationClip, AnimationClip>(this[i].Key, null);
+        }
     }
 }

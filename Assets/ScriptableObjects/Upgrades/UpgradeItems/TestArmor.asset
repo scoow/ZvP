@@ -16,3 +16,10 @@ MonoBehaviour:
   _powerups:
   - {fileID: 11400000, guid: c544592361d3c5748b891481ed92070a, type: 2}
   - {fileID: 11400000, guid: eebc0a6e11d333449a0548de75d5434a, type: 2}
+  animations:
+  - Kind: 0
+    AnimationClip: {fileID: 7400000, guid: 62af3b0c1fdaf7843bb271cf2de6cde7, type: 2}
+  - Kind: 1
+    AnimationClip: {fileID: 7400000, guid: a131f06b4e96f2446b1ee434e91e7e9a, type: 2}
+  - Kind: 2
+    AnimationClip: {fileID: 7400000, guid: d162663208ccd73438ace7c83225a92c, type: 2}
